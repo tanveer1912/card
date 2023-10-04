@@ -1,0 +1,138 @@
+:root {
+    --dark: #0A0C19;
+    --dark-violet: #1B1938;
+    --violet: #AA5CDB;
+    --white: #ffff;
+    --red: #f50404;
+    --primary-font: 'Inter', sans-serif;
+    --secondary-font: 'Lexend Deca', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--dark);
+}
+
+.card {
+    width: 70%;
+    height: 60%;
+
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+    height: 100%;
+    width: 50%;
+    background-color: var(--dark-violet);
+    color: var(--white);
+
+
+}
+
+.card-header {
+    font-family: var(--primary-font);
+}
+
+.span {
+    color: var(--violet);
+}
+
+.card-details {
+    padding-top: 20px;
+}
+
+.text-info {
+    display: flex;
+    justify-content: space-between
+}
+
+.text-info p {
+    font-family: var(--secondary-font);
+}
+
+.card-image {
+    height: 100%;
+    width: 50%;
+    position: relative;
+
+}
+
+.over-lay {
+    height: 100%;
+    width: 100%;
+    background-color: var(--violet);
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.3;
+    z-index: 1;
+    transition: all ease-in-out 0.3s;
+}
+
+.card-image img {
+    filter: grayscale(100%);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+
+.card:hover .over-lay {
+    opacity: 0;
+}
+
+.card:hover .card-image img {
+    filter: grayscale(0%);
+}
+
+@media screen and (max-width : 576px) {
+    .card {
+        width: 80%;
+        height: 80%;
+        flex-direction: column-reverse;
+    }
+
+    .card-text {
+        width: 100%;
+        height: 70%;
+        padding: 20px;
+    }
+
+    .card-image {
+        height: 30%;
+        width: 100%;
+    }
+
+
+}
+
+@media screen and (min-width : 577px) and (max-width : 992px) {
+    .card-text {
+        width: 70%;
+        height: 100%;
+
+    }
+
+    .card-image {
+        height: 100%;
+        width: 30%;
+    }
+
+
+}
